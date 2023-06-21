@@ -1,13 +1,15 @@
-# İBB Ecodation Frontend
-----------------
+# İBB  Ecodation Frontend
+---------
+## Author: Yasin Sezer Türk
 
-## Author:Yasin Sezer Türk
+---------
 ## Frontend
-`````sh
+```sh
 HTML5
 CSS3
 JS
 BOOTSTRAP
 JQUERY
 REACT JS
-ANGULAR
+Angular
+```
