@@ -17,9 +17,9 @@ $("#tags").autocomplete({
 let newDate=()=>{
     const date=new Date().getFullYear();
 // JS DOM
-//document.getElementById("date_id").innerHTML=new Date().getFullYear();
-
-// Jquery DOM
-$("#date_id").html(date);
-}
+document.getElementById("date_id").innerHTML=new Date().getFullYear()};
 newDate()
+// Jquery DOM
+// $("#date_id").html(date);
+// }
+// newDate()
