@@ -48,7 +48,7 @@ multiple Comment
 //var &~44$deneme44="JS Data";
 //console.log(44$deneme44);
 
-// interpreter, compiler 
+// interpreter, compiler
 // senkron, asenkron ?
 
 // whoisting
@@ -142,7 +142,6 @@ multiple Comment
 // var hexadecimal=0xffa
 // console.log(hexadecimal)
 
-
 //Number() ve parseInt() farkı nedir?
 //String() data.toString() arasındaki fark nedir?
 //Cast
@@ -154,10 +153,8 @@ multiple Comment
 
 // console.log(String(30)+10);
 
-
 // var number=10;
 // console.log(number.toString()+10);
-
 
 //var, let, const
 
@@ -198,11 +195,9 @@ multiple Comment
 // console.log(str.concat("sona"))
 // console.log(str.replace(str,"değiştir"))
 
-
 // console.log(str.substring(1))
 
 // console.log(str.substring(0,4))
-
 
 //Örnek-4: Aşağıdaki örnekleri math ile çözelim ?
 // -5.9 sayıyının aşağıdaki işlemleri yaptıralım ?
@@ -213,7 +208,7 @@ multiple Comment
 // 5-yuvarlama yapsın 6.0
 // 6-)çıkan sonucu 5 bölsün 6/5=1
 // 7-) iki sayı arasından karşılaştırma yapsın en küçüğünü alsın ve 1 ve 5
-// 8-) küçük sayı eğer tekse 3 eklesin çiftse 5 eklesin 
+// 8-) küçük sayı eğer tekse 3 eklesin çiftse 5 eklesin
 
 // Örnek-5 : kullanıcı tarafından girilen bir sayıyı negatif mi pozitif mi olduğu ekran yazdıran algoritma ?
 //NOT: cast kullalım ?
@@ -221,7 +216,7 @@ multiple Comment
 // Örnek-6 : kullanıcı tarafından password ve repassword alalım sonrasında bu iki değeri karşılaştırma yapalım
 //eğer aynı girilirse aynı veri yoksa birbirine uymadı yazan algoritma yapalım
 
-// Ödev 
+// Ödev
 // ÖDEV NOT:5 adımı beraber yapalım
 // kullanıcı tarafından girilen bir kelimenin (prompt)
 // let userData= prompt("Lütfen bir şeyler yazınız");
@@ -232,7 +227,7 @@ multiple Comment
 // S-5) Kullanıcıdan alınan ilk kelimeyle , "javascript" kelimeyle değiştirin. (replace, substring, indexOf)
 // console.log(userData.replace("xxxxxxx"),"javascript");
 // console.log(userData.replace(userData.substring(0,userData.indexOf(" ")),"javascript"));
-// S-6) yazdığınız kelimede "javascript ile mi başlıyor" ? (startsWith()) 
+// S-6) yazdığınız kelimede "javascript ile mi başlıyor" ? (startsWith())
 // S-7) yazdığınız kelimede "javascript ile mi bitiyor" ? (endsWith())
 // S-8) ilk harf nedir  ? (charAt())
 // S-9) girdiğiniz kelimenin sonuna "-ben js öğreniyorum" (concat())
@@ -242,41 +237,190 @@ multiple Comment
 //Function (Normal Fonksiyon)
 
 //1 returnsuz Parametresiz
-function returnsuzParametresiz(){
-    console.log("deneme")
+function returnsuzParametresiz() {
+  console.log("deneme");
 }
-returnsuzParametresiz()
+returnsuzParametresiz();
 
 //2 returnsuz Parametreli
-function returnsuzParametreli(adi){
-    console.log("deneme "+adi)
+function returnsuzParametreli(adi) {
+  console.log("deneme " + adi);
 }
-returnsuzParametreli("yasinT") //argüman :"yasinT"
+returnsuzParametreli("yasinT"); //argüman :"yasinT"
 
 //3 returnlu Parametresiz
-function returnluParametresiz(){
-    return "deneme55"
+function returnluParametresiz() {
+  return "deneme55";
 }
-let result=returnluParametresiz()
+let result = returnluParametresiz();
 console.log(result);
 
 //3 returnlu Parametreli
-function returnluParametreli(soyadi){
-    return "deneme66 "+soyadi
+function returnluParametreli(soyadi) {
+  return "deneme66 " + soyadi;
 }
-let result2=returnluParametreli("Türk")
+let result2 = returnluParametreli("Türk");
 console.log(result2);
-
 
 //////////////////////////////////////////////////////////////
 
 //Anoymous (Function)
-let anonymous=function(){}
-
+let anonymous = function () {};
 
 //Arrow (Function)
-let arrow=()=>{}
+let arrow = () => {};
 
 //////////////////////////////////////////////////////////////
 //condition
-//loop
+const condi = () => {
+  let number = 4;
+  if (number >= 2) {
+    console.log("Büyüktür");
+  } else {
+    console.log("Küçüktür");
+  }
+};
+condi();
+
+const condi2 = () => {
+  let number = 4;
+  if (number >= 2) console.log("Büyüktür");
+  else console.log("Küçüktür");
+};
+condi2();
+
+const condi3 = () => {
+  let number = 4;
+  let result = number >= 2 ? "Büyüktür" : "Küçüktür";
+  console.log(result);
+};
+condi3();
+
+const condi4 = () => {
+  let number = 4;
+  console.log(number >= 2 ? "Büyüktür" : "Küçüktür");
+};
+condi4();
+
+const condi5 = () => {
+  let number = 4;
+  if (number == "1") {
+    console.log("1");
+  } else if (number == 2) {
+    console.log("2");
+  } else if (number == 3) {
+    console.log("3");
+  } else if (number === 4) {
+    console.log("4");
+  } else {
+    console.log("1<=X<=5 dışındadır");
+  }
+};
+condi5();
+
+const condi6 = () => {
+  let number = 4;
+  // break   : döngü kırmak
+  // return  : metot kırmak
+  // continue: 1 kereye mahsus es geç sonra döngüye devam et.
+  switch (number) {
+    case 1:
+      console.log("1");
+      break; // döngü kırmak
+    case 2:
+      console.log("2");
+      break;
+    case 3:
+      console.log("3");
+      break;
+    case 4:
+      console.log("4");
+      break;
+    default:
+      console.log("1<=X<=5 dışındadır");
+      break;
+  }
+};
+condi6();
+
+// ÖDEV:
+// Kullanıcı tarafından girilen bir sayının negatif mi, pozitif mi ? bunu yazan JS code yazınız.
+// (Dikkat: normal  function ile yazınız)
+
+// Kullanıcı tarafından girilen bir sayının tek mi, çift mi olduğunu yazan JS code yazınız.
+// (Dikkat:anonymous function ve ternary ile yazınız)
+
+let isOddEven = () => {
+  const result = 4;
+  if (result % 2 == 0) console.log("çifttir");
+  else console.log("tektir");
+};
+isOddEven();
+
+// Kullanıcıdan alınan sayıya göre Haftanın günlerini switch-case ile JS code yazınız?
+// Örneğin: kullanıcı 1 girdi: 1=pazartesi yazacak
+
+const days = () => {
+  let number = 1;
+  switch (number) {
+    case 1:
+      console.log("Pazartesi");
+      break; // döngü kırmak
+    case 2:
+      console.log("Salı");
+      break;
+    case 3:
+      console.log("Çarşamba");
+      break;
+    case 4:
+      console.log("Perşembe");
+      break;
+    case 5:
+      console.log("Cuma");
+      break;
+    case 6:
+      console.log("Cumartesi");
+      break;
+    case 7:
+      console.log("Pazar");
+      break;
+    default:
+      console.log("gün tanımlı değildir");
+      break;
+  }
+};
+days();
+
+// loop
+
+let loop = () => {
+  for (let i = 1; i <= 10; i++) {
+    document.write(i + " ");
+  }
+};
+
+loop();
+
+document.writeln("<br/>");
+
+let loop2 = () => {
+  let i = 1;
+  while (i <= 10) {
+    document.write(i + " ");
+    i++;
+  }
+};
+loop2();
+
+document.writeln("<br/>");
+
+let loop3 = () => {
+  let i = 1;
+  do {
+    document.write(i + " ");
+    i++;
+  } while (i <= 10);
+};
+loop3();
+
+// Örnekler
