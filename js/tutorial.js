@@ -240,27 +240,27 @@ multiple Comment
 function returnsuzParametresiz() {
   console.log("deneme");
 }
-returnsuzParametresiz();
+//returnsuzParametresiz();
 
 //2 returnsuz Parametreli
 function returnsuzParametreli(adi) {
   console.log("deneme " + adi);
 }
-returnsuzParametreli("yasinT"); //argüman :"yasinT"
+//returnsuzParametreli("yasinT"); //argüman :"yasinT"
 
 //3 returnlu Parametresiz
 function returnluParametresiz() {
   return "deneme55";
 }
 let result = returnluParametresiz();
-console.log(result);
+//console.log(result);
 
 //3 returnlu Parametreli
 function returnluParametreli(soyadi) {
   return "deneme66 " + soyadi;
 }
 let result2 = returnluParametreli("Türk");
-console.log(result2);
+//console.log(result2);
 
 //////////////////////////////////////////////////////////////
 
@@ -280,27 +280,27 @@ const condi = () => {
     console.log("Küçüktür");
   }
 };
-condi();
+//condi();
 
 const condi2 = () => {
   let number = 4;
   if (number >= 2) console.log("Büyüktür");
   else console.log("Küçüktür");
 };
-condi2();
+//condi2();
 
 const condi3 = () => {
   let number = 4;
   let result = number >= 2 ? "Büyüktür" : "Küçüktür";
   console.log(result);
 };
-condi3();
+//condi3();
 
 const condi4 = () => {
   let number = 4;
   console.log(number >= 2 ? "Büyüktür" : "Küçüktür");
 };
-condi4();
+//condi4();
 
 const condi5 = () => {
   let number = 4;
@@ -316,7 +316,7 @@ const condi5 = () => {
     console.log("1<=X<=5 dışındadır");
   }
 };
-condi5();
+//condi5();
 
 const condi6 = () => {
   let number = 4;
@@ -341,7 +341,7 @@ const condi6 = () => {
       break;
   }
 };
-condi6();
+//condi6();
 
 // ÖDEV:
 // Kullanıcı tarafından girilen bir sayının negatif mi, pozitif mi ? bunu yazan JS code yazınız.
@@ -355,7 +355,7 @@ let isOddEven = () => {
   if (result % 2 == 0) console.log("çifttir");
   else console.log("tektir");
 };
-isOddEven();
+//isOddEven();
 
 // Kullanıcıdan alınan sayıya göre Haftanın günlerini switch-case ile JS code yazınız?
 // Örneğin: kullanıcı 1 girdi: 1=pazartesi yazacak
@@ -389,7 +389,7 @@ const days = () => {
       break;
   }
 };
-days();
+//days();
 
 // loop
 
@@ -399,7 +399,7 @@ let loop = () => {
   }
 };
 
-loop();
+//loop();
 
 document.writeln("<br/>");
 
@@ -410,7 +410,7 @@ let loop2 = () => {
     i++;
   }
 };
-loop2();
+//loop2();
 
 document.writeln("<br/>");
 
@@ -421,6 +421,166 @@ let loop3 = () => {
     i++;
   } while (i <= 10);
 };
-loop3();
+//loop3();
 
 // Örnekler
+
+//try catch
+let tryCatchTuto = () => {
+  try {
+    alertx("pop-pup");
+  } catch (error) {
+    console.log("hata mesajı: " + error.message);
+    console.log("hata mesajı: " + error.name);
+    console.log(error);
+  } finally {
+    console.log("db.close");
+    console.log("port.close");
+  }
+  console.log("son satır");
+};
+
+//tryCatchTuto();
+
+/////////////////////////////////////////////////////////////////////////////////
+
+//debug nedir?
+//1 ile 10 dahil olmak üzere toplama işlemi yapan JS algoritmasını yazınız.
+
+const debugData = () => {
+  sum = 0;
+  for (let i = 1; i <= 10; i++) {
+    sum += i;
+  }
+  console.log("toplam: " + sum);
+};
+//debugData();
+
+////////////////////////////////////////////////////////
+
+// SORU 1<=userData<=50
+// 1 ile Kullanıcı tarafından alınan bitiş sayısına kadar toplama yapan Algoritma örneği
+// Örnek: 1<=user 1+2+3+...userdatası
+
+const sumExamplesData = () => {
+  let commonSum = 0;
+  let oddSum = 0,
+    oddCounter = 0,
+    oddNumber = "";
+  let evenSum = 0,
+    evenCounter = 0,
+    evenNumber = "";
+  let user = Number(prompt("Lütfen 1 ile 50 arasında bir sayısı giriniz"));
+  for (let i = 0; i <= user; i++) {
+    if (user === 44) {
+      console.log("secret key number failed " + user);
+      break;
+    }
+    if (user === 50) {
+      console.log("en fazla 50 sayısına kadar hesaplanır " + user);
+      break;
+    }
+    if (user === 7) {
+      console.log("7 sayısını toplama !!! " + user);
+      continue;
+    }
+    if (i % 2 == 0) {
+      evenSum += i;
+      evenCounter++;
+      evenNumber = evenNumber + " " + i;
+    } else {
+      oddSum += i;
+      oddCounter++;
+      oddNumber = oddNumber + " " + i;
+    }
+    commonSum += i;
+  }
+  console.log("Toplam:" + commonSum);
+
+  console.log("Çift sayı toplam: " + evenSum);
+  console.log("Çift sayı adedi: " + evenCounter);
+  console.log("Çift sayılar: " + evenNumber);
+
+  console.log("Tek sayı toplam: " + oddSum);
+  console.log("Tek sayı adedi: " + oddCounter);
+  console.log("Tek sayılar: " + oddNumber);
+};
+
+//sumExamplesData();
+// Eğer Bu sayılardan 7 sayıyı varsa bunu toplayama dahil etmesin (continue)
+// Bu sayının en fazla 50'e kadar toplama yapabilir (break)
+// bu sayılardan çift olanların kaç tane, sayıların kendisi ve toplamları nedir ?
+// bu sayılardan tek olanların kaç tane, sayıların kendisi ve toplamları nedir ?
+// secret-Key kullanıcı eğer 44 girerse hiç bir işlem yapmadan sistemden çıkış sağlansın onunda haricinde sürekli işlem yapsın
+// Dikkat: Bu algoritmayı Arrow Function ile yapalım.
+// (Clean code kuralları çercevesinde ) algoritma yapan JS program?
+
+////////////////////////////////////////////////////////
+//Örnek-1
+//y=3x+4k ==>1.dereceden2bilinmeyenlidenklem algoritması
+//Kullanıcı tarafından alınan x ve k değerlerini hesaplayan algoritma yazınız ?
+
+const denklem = () => {
+  let x = Number(prompt("x değeri giriniz"));
+  let k = Number(prompt("k değeri giriniz"));
+  let y = 3 * x + 4 * k;
+  console.log(y);
+};
+//denklem()
+
+//örnek-2
+//Kullanıcı tarafından alınan dereceyi  Fahrenhayta çeviren algoritma yapalım.
+//Formül: (derece*9/5)+32
+
+const celciusToFahrenhayt=()=>{
+    let celcius=Number(prompt("Lütfen santigrat derece giriniz !!!"))
+}
+
+
+//örnek-3 operatör işlemleri: aşağıdaki örneği javascript ile yapalım
+//4+3*2(3:3-1*6+9:1+(3:3))
+
+////////////////////////////////////////////////////////
+// ÖDEV
+// kullanıcıdan aldığımız isim soyisim (boşluk var)
+// ilk karakter göstersin sonraki kelimeleri masking (maskeleme yapsın)
+// eğer kullanıcı isim ve soyisimi ilk karakteri küçük girmişse büyük olsun mutlaka
+// Hamit Mızrak
+// H**** MIZ***
+// ipucu: charAt, substring, indexOf, döngü, karar mekanizma
+
+let usernameAndSurnameMasking=()=>{
+    const usernameAndSurname=prompt("Lütfen adınızı ve soyadınızı giriniz");
+
+    const userIndex=usernameAndSurname.indexOf(" ");
+    let username=usernameAndSurname.substring(0,userIndex);
+    for (let i = 1; i < username.length; i++) {
+      username=username.replace(username.charAt(i),"*");
+    }
+    username= username.toUpperCase()
+    console.log(username.toUpperCase());
+
+    let surname=usernameAndSurname.substring(userIndex+1,usernameAndSurname.length).toUpperCase();
+    console.log(surname)
+    for (let i = 3; i <surname.length; i++) {
+        surname=surname.replace(surname.charAt(i),"*");
+    }
+    console.log(surname);
+    console.log(username.concat(" ").concat(surname)  );
+}
+usernameAndSurnameMasking();
+
+
+////////////////////////////////////////////////////////
+
+//return break continue?
+//software prensible
+//Monad
+//setTimeOut
+//callbackFunction
+//promise
+//asyn/await
+//dizi
+//obje
+//dom
+//jquery ajax GET/POST
