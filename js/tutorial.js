@@ -534,8 +534,10 @@ const denklem = () => {
 
 const celciusToFahrenhayt=()=>{
     let celcius=Number(prompt("Lütfen santigrat derece giriniz !!!"))
+    let ToFahrenhayt=(celcius*9/5)+32
+    console.log(ToFahrenhayt);
 }
-
+//celciusToFahrenhayt()
 
 //örnek-3 operatör işlemleri: aşağıdaki örneği javascript ile yapalım
 //4+3*2(3:3-1*6+9:1+(3:3))
@@ -568,7 +570,7 @@ let usernameAndSurnameMasking=()=>{
     console.log(surname);
     console.log(username.concat(" ").concat(surname)  );
 }
-usernameAndSurnameMasking();
+// usernameAndSurnameMasking();
 
 
 ////////////////////////////////////////////////////////
