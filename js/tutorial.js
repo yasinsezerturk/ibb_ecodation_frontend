@@ -201,6 +201,14 @@ multiple Comment
 
 //Örnek-4: Aşağıdaki örnekleri math ile çözelim ?
 // -5.9 sayıyının aşağıdaki işlemleri yaptıralım ?
+// const x=-5.9
+// console.log(Math.abs(x))
+// console.log(Math.abs(Math.round(x)))
+// console.log(Math.pow(Math.round(x),2))
+// console.log(Math.sqrt(Math.abs(x)))
+// console.log(Math.ceil(Math.abs(x)))
+// console.log(Math.ceil(Math.abs(x))/5)
+
 // 1-mutlak değeri alsın 5.9
 // 2-yuvarlama yapsın  6.0
 // 3-karesini alsın 36.00
@@ -216,8 +224,30 @@ multiple Comment
 // Örnek-6 : kullanıcı tarafından password ve repassword alalım sonrasında bu iki değeri karşılaştırma yapalım
 //eğer aynı girilirse aynı veri yoksa birbirine uymadı yazan algoritma yapalım
 
+const passwordCheck = () => {
+  const password1 = prompt("Lütfen şifrenizi giriniz");
+  const password2 = prompt("Lütfen şifrenizi tekrar giriniz");
+  if (password1 == password2) console.log("şifreniz doğru :)");
+  else console.log("şifreniz yanlış :(");
+};
+
+// passwordCheck()
+
 // Ödev
 // ÖDEV NOT:5 adımı beraber yapalım
+
+// let userData= prompt("Lütfen bir şeyler yazınız");
+// console.log(userData.length);
+// console.log(userData.trim().length);
+// console.log(userData.toLowerCase());
+// console.log(userData.toUpperCase());
+// console.log(userData.replace(userData.substring(0,userData.indexOf(" ")),"javascript"))
+// console.log(userData.startsWith("javascript"));
+// console.log(userData.endsWith("javascript"));
+// console.log(userData.charAt(0));
+// console.log(userData.concat(" ben js öğreniyorum"))
+// console.log(userData.substring(0,4))
+
 // kullanıcı tarafından girilen bir kelimenin (prompt)
 // let userData= prompt("Lütfen bir şeyler yazınız");
 // S-1) Kaç karakterlidir ? (length)
@@ -225,8 +255,6 @@ multiple Comment
 // S-3) bütün kelimeyi küçük harfle göstermek ? (toLowerCase())
 // S-4) bütün kelimeyi büyük harfle göstermek ? (toUpperCase())
 // S-5) Kullanıcıdan alınan ilk kelimeyle , "javascript" kelimeyle değiştirin. (replace, substring, indexOf)
-// console.log(userData.replace("xxxxxxx"),"javascript");
-// console.log(userData.replace(userData.substring(0,userData.indexOf(" ")),"javascript"));
 // S-6) yazdığınız kelimede "javascript ile mi başlıyor" ? (startsWith())
 // S-7) yazdığınız kelimede "javascript ile mi bitiyor" ? (endsWith())
 // S-8) ilk harf nedir  ? (charAt())
@@ -346,6 +374,14 @@ const condi6 = () => {
 // ÖDEV:
 // Kullanıcı tarafından girilen bir sayının negatif mi, pozitif mi ? bunu yazan JS code yazınız.
 // (Dikkat: normal  function ile yazınız)
+
+let negativeOrPositive = () => {
+  let user = Number(prompt("Lütfen bir sayı giriniz"));
+  if (user < 0) console.log("Sayı negatiftir.");
+  if (user > 0) console.log("Sayı pozitiftir.");
+  if ((user = 0)) console.log("Sayı nötr yani 0'dır.");
+};
+// negativeOrPositive()
 
 // Kullanıcı tarafından girilen bir sayının tek mi, çift mi olduğunu yazan JS code yazınız.
 // (Dikkat:anonymous function ve ternary ile yazınız)
@@ -476,7 +512,7 @@ const sumExamplesData = () => {
       console.log("secret key number failed " + user);
       break;
     }
-    if (user === 50) {
+    if (user > 50) {
       console.log("en fazla 50 sayısına kadar hesaplanır " + user);
       break;
     }
@@ -506,7 +542,7 @@ const sumExamplesData = () => {
   console.log("Tek sayılar: " + oddNumber);
 };
 
-//sumExamplesData();
+// sumExamplesData();
 // Eğer Bu sayılardan 7 sayıyı varsa bunu toplayama dahil etmesin (continue)
 // Bu sayının en fazla 50'e kadar toplama yapabilir (break)
 // bu sayılardan çift olanların kaç tane, sayıların kendisi ve toplamları nedir ?
@@ -532,15 +568,21 @@ const denklem = () => {
 //Kullanıcı tarafından alınan dereceyi  Fahrenhayta çeviren algoritma yapalım.
 //Formül: (derece*9/5)+32
 
-const celciusToFahrenhayt=()=>{
-    let celcius=Number(prompt("Lütfen santigrat derece giriniz !!!"))
-    let ToFahrenhayt=(celcius*9/5)+32
-    console.log(ToFahrenhayt);
-}
+const celciusToFahrenhayt = () => {
+  let celcius = Number(prompt("Lütfen santigrat derece giriniz !!!"));
+  let ToFahrenhayt = (celcius * 9) / 5 + 32;
+  console.log(ToFahrenhayt);
+};
 //celciusToFahrenhayt()
 
 //örnek-3 operatör işlemleri: aşağıdaki örneği javascript ile yapalım
 //4+3*2(3:3-1*6+9:1+(3:3))
+
+const mathFunction = () => {
+  const mathematicalOperation = 4 + 3 * 2 * (3 / 3 - 1 * 6 + 9 / 1 + 3 / 3);
+  console.log(mathematicalOperation);
+};
+// mathFunction()
 
 ////////////////////////////////////////////////////////
 // ÖDEV
@@ -551,27 +593,28 @@ const celciusToFahrenhayt=()=>{
 // H**** MIZ***
 // ipucu: charAt, substring, indexOf, döngü, karar mekanizma
 
-let usernameAndSurnameMasking=()=>{
-    const usernameAndSurname=prompt("Lütfen adınızı ve soyadınızı giriniz");
+let usernameAndSurnameMasking = () => {
+  const usernameAndSurname = prompt("Lütfen adınızı ve soyadınızı giriniz");
 
-    const userIndex=usernameAndSurname.indexOf(" ");
-    let username=usernameAndSurname.substring(0,userIndex);
-    for (let i = 1; i < username.length; i++) {
-      username=username.replace(username.charAt(i),"*");
-    }
-    username= username.toUpperCase()
-    console.log(username.toUpperCase());
+  const userIndex = usernameAndSurname.indexOf(" ");
+  let username = usernameAndSurname.substring(0, userIndex);
+  for (let i = 1; i < username.length; i++) {
+    username = username.replace(username.charAt(i), "*");
+  }
+  username = username.toUpperCase();
+  console.log(username.toUpperCase());
 
-    let surname=usernameAndSurname.substring(userIndex+1,usernameAndSurname.length).toUpperCase();
-    console.log(surname)
-    for (let i = 3; i <surname.length; i++) {
-        surname=surname.replace(surname.charAt(i),"*");
-    }
-    console.log(surname);
-    console.log(username.concat(" ").concat(surname)  );
-}
+  let surname = usernameAndSurname
+    .substring(userIndex + 1, usernameAndSurname.length)
+    .toUpperCase();
+  console.log(surname);
+  for (let i = 3; i < surname.length; i++) {
+    surname = surname.replace(surname.charAt(i), "*");
+  }
+  console.log(surname);
+  console.log(username.concat(" ").concat(surname));
+};
 // usernameAndSurnameMasking();
-
 
 ////////////////////////////////////////////////////////
 
@@ -586,3 +629,43 @@ let usernameAndSurnameMasking=()=>{
 //obje
 //dom
 //jquery ajax GET/POST
+
+////////////////////////////////////////////////////////
+
+// ÖDEV TEKRARI
+// ÖDEV
+// kullanıcıdan aldığımız isim soyisim (boşluk var)
+
+let surnameAndLastname = () => {
+  let surnameLastname = prompt("Lütfen adınızı ve soyadınızı giriniz!!!");
+
+  let nameIndex = surnameLastname.indexOf(" ")
+
+  //isim ayırma
+  let surname = surnameLastname.substring(0, nameIndex);
+  
+  for (let i = 1; i < surname.length; i++) {
+    surname = surname.replace(surname.charAt(i), "*").toUpperCase()
+    
+  }
+  // console.log(surname);
+
+  //soyisim ayırma
+  let lastname = surnameLastname.substring(nameIndex + 1,surnameLastname.length);
+  
+
+  for (let i = 3; i < lastname.length; i++) {
+    lastname=lastname.replace(lastname.charAt(i),"*").toUpperCase()
+    
+  }
+  // console.log(lastname);
+
+  console.log(surname.concat(" ",lastname))
+};
+surnameAndLastname();
+
+// ilk karakter göstersin sonraki kelimeleri masking (maskeleme yapsın)
+// eğer kullanıcı isim ve soyisimi ilk karakteri küçük girmişse büyük olsun mutlaka
+// Hamit Mızrak
+// H**** MIZ***
+// ipucu: charAt, substring, indexOf, döngü, karar mekanizma
