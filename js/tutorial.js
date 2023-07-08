@@ -51,6 +51,9 @@ multiple Comment
 // interpreter, compiler
 // senkron, asenkron ?
 
+// senkron programlama, işlemlerin sırasıyla yapıldı ve yukarıdan aşağıya doğru bir hiyerarşi içinde programın çalışması sağlanır.
+// asenkron programla ise herhangi bir işlem sırası olmadan istenilen sırada şekilde programların çalıştırılmasını sağlar.
+
 // whoisting
 // result2=56;
 // var result2;
@@ -143,7 +146,15 @@ multiple Comment
 // console.log(hexadecimal)
 
 //Number() ve parseInt() farkı nedir?
+// Number fonksiyonu string bir değeri sayıya çevirir, içinde string bir ifade varsa NaN değerini döndürür. parseInt ise string bir ifade içindeki sayıları
+// bize döndürür. Eğer string bir ifadeye gelirse fonksiyon orada durur. örnek x=10a parseInt ise 10 değerini verir, ama a10 ifadesi Nan değerini döndürür
+// çünkü a string bir ifade ile başlamaktadır.
+
+
 //String() data.toString() arasındaki fark nedir?
+// string ve toString arasındaki fark, string her türlü ifadeyi dönüştürebilir ama toString null ve undefine değerleri dönüştüremez
+
+
 //Cast
 // console.log('10'+10);
 
