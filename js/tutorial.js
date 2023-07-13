@@ -744,9 +744,9 @@ let arr = () => {
 
 let arrResult = () => {
   const data = arr();
-  console.log(data);
-  console.log(data[0]);
-  console.log(data[data.length - 1]);
+  // console.log(data);
+  // console.log(data[0]);
+  // console.log(data[data.length - 1]);
   //Iterative For Loop
   // for(let i=0;i<data.length;i++)
   // document.write(data[i]+" ")
@@ -774,32 +774,82 @@ let arrResult = () => {
 
   // filter
   // filter<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): S[];
-  let result1 = data
-    .filter((value, index, array) => {
-      return value % 2 == 0;
-    })
-    .forEach((value, index, array) => {
-      //document.write(index+" => "+value+"<br/>");
-      document.write(`${index} => ${value} <br/>`);
-    });
-    document.write("<br/>")
+  // let result1 = data
+  //   .filter((value, index, array) => {
+  //     return value % 2 == 0;
+  //   })
+  //   .forEach((value, index, array) => {
+  //     //document.write(index+" => "+value+"<br/>");
+  //     document.write(`${index} => ${value} <br/>`);
+  //   });
+  //   document.write("<br/>")
   //map
   // map<U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any): U[];
 
-  data
-    .map((value, index, array) => {
-      return (value += 10);
-    })
-    .forEach((value, index, array) => {
-      //document.write(index+" => "+value+"<br/>");
-      document.write(`${index} => ${value} <br/>`);
-    });
-    document.write("<br/>")
+  // data
+  //   .map((value, index, array) => {
+  //     return (value += 10);
+  //   })
+  //   .forEach((value, index, array) => {
+  //     //document.write(index+" => "+value+"<br/>");
+  //     document.write(`${index} => ${value} <br/>`);
+  //   });
+  //   document.write("<br/>")
   
+    //dizilere devam
+
+    document.writeln("Elaman sayısı: " + data.length)
+    // console.log(data);
+    // data.push(99);
+    // console.log(data);
+    // data.unshift(11);
+    // console.log(data);
+
+    // data.pop() //sonda 1 eleman çıkar
+    // console.log(data);
+    // data.shift() //baştan 1 eleman çıkar
+    // console.log(data);
+
+    // data.sort();
+    // console.log(data);
+
+    // data.reverse();
+    // console.log(data);
+
+    data.sort().reverse();
+    console.log(data);
+    console.log(data.toString().substring(0, 2));
+    
+    // splice ,slice 
+
+
 };
 
 arrResult();
 
-//obje
-//dom
-//jquery ajax GET/POST
+// ÖDEV
+/*
+ Örnek
+1.YOL normal diziyle yapalım
+rastgele 10 elemanlı bir dizi  oluşturalım.
+bu sayılardan tek olanları bulalım.
+bu tek sayıların sonuna 5 ekleyelim
+buradaki sayıları ekranda gösterelim. ?
+bu şarta uyan kaç tane sayı vardır ?
+
+ 2.YOL map,filter, forEach ile yapalım.
+ rastgele 10 elemanlı bir dizi  oluşturalım.  ==> (random)
+ bu sayılardan tek olanları bulalım.          ==> (filter)
+ bu tek sayıların sonuna 5 ekleyelim          ==> (map)
+ buradaki sayıları ekranda gösterelim. ?      ==> (forEach)
+ bu şarta uyan kaç tane sayı vardır ?         ==> (counter)
+ 2.YOL map,filter,counter
+
+*/
+
+////////////////////////////////////////////////////////
+// callback promise örneği
+////////////////////////////////////////////////////////
+// obje
+// dom
+// jquery ajax GET/POST
