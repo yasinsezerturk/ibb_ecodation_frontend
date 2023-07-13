@@ -795,37 +795,35 @@ let arrResult = () => {
   //     document.write(`${index} => ${value} <br/>`);
   //   });
   //   document.write("<br/>")
-  
-    //dizilere devam
 
-    document.writeln("Elaman sayısı: " + data.length)
-    // console.log(data);
-    // data.push(99);
-    // console.log(data);
-    // data.unshift(11);
-    // console.log(data);
+  //dizilere devam
 
-    // data.pop() //sonda 1 eleman çıkar
-    // console.log(data);
-    // data.shift() //baştan 1 eleman çıkar
-    // console.log(data);
+  document.writeln("Elaman sayısı: " + data.length);
+  // console.log(data);
+  // data.push(99);
+  // console.log(data);
+  // data.unshift(11);
+  // console.log(data);
 
-    // data.sort();
-    // console.log(data);
+  // data.pop() //sonda 1 eleman çıkar
+  // console.log(data);
+  // data.shift() //baştan 1 eleman çıkar
+  // console.log(data);
 
-    // data.reverse();
-    // console.log(data);
+  // data.sort();
+  // console.log(data);
 
-    data.sort().reverse();
-    console.log(data);
-    console.log(data.toString().substring(0, 2));
-    
-    // splice ,slice 
+  // data.reverse();
+  // console.log(data);
 
+  data.sort().reverse();
+  console.log(data);
+  console.log(data.toString().substring(0, 2));
 
+  // splice ,slice
 };
 
-arrResult();
+// arrResult();
 
 // ÖDEV
 /*
@@ -848,8 +846,124 @@ bu şarta uyan kaç tane sayı vardır ?
 */
 
 ////////////////////////////////////////////////////////
-// callback promise örneği
+
 ////////////////////////////////////////////////////////
-// obje
+// callback - promise örneği
+let callbackFunctionComputer = () => {
+  // dizi objesi içerisinde 5 tane random obje oluşturalım.
+  const computerArray = [];
+  for (let index = 0; index < 5; index++) {
+    let computerObject = {
+      computerName: `computer ${index + 1}`,
+      price: `${(index + 1) * 100}`,
+    };
+    computerArray.push(computerObject);
+  }
+  console.log(computerArray);
+
+  // bu dizi içindeki sadece computer Name bileşenleri gösterin (Map)
+  const arrayInComputerName = () => {
+    computerArray.map((temp) => {
+      //console.log(`${temp.computerName}`);
+    });
+  };
+  arrayInComputerName();
+
+  // call back function Price
+  const arrayInComputerObject = (obj, callBackFnc) => {
+    computerArray.push(obj);
+    callBackFnc();
+  };
+  arrayInComputerObject(
+    { computerName: "computer 6", price: 600 },
+    arrayInComputerName
+  );
+};
+// callbackFunctionComputer();
+
+// callback - promise örneği
+let promiseFunctionComputer = () => {
+  // dizi objesi içerisinde 5 tane random obje oluşturalım.
+  const computerArray = [];
+  for (let index = 0; index < 5; index++) {
+    let computerObject = {
+      computerName: `computer ${index + 1}`,
+      price: `${index + 1}` * `${Number(100)}`,
+    };
+    computerArray.push(computerObject);
+  }
+  console.log(computerArray);
+
+  // bu dizi içindeki sadece computer Name bileşenleri gösterin (Map)
+  const arrayInComputerName = () => {
+    computerArray.map((temp) => {
+      //console.log(`${temp.computerName}`);
+    });
+  };
+  arrayInComputerName();
+
+  // promise function
+  const arrayInComputerObject = (obj) => {
+    const promiseReturn = new Promise(() => {
+      computerArray.push(obj);
+    });
+    return promiseReturn;
+  };
+  arrayInComputerObject({ computerName: "computer 6", price: 600 })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
+// promiseFunctionComputer();
+
+////////////////////////////////////////////////////////
+//json nedir? XML nedir? Arasındaki fark?
+
+let objectTutorials = () => {
+  // object
+  const personObj = {
+    name: "Yasin Sezer",
+    surname: "Türk",
+    number: 31,
+    isLogin: true,
+    software: ["Html5", "css3", "js"],
+    fullName:function(){
+      return this.name+" "+this.surname
+    }
+  };
+  console.log(personObj);
+  //variable
+  console.log(personObj.name);
+  console.log(personObj.surname);
+  //variable nested
+  console.log(personObj["name"]);
+  console.log(personObj["surname"]);
+
+  //Array
+  console.log(personObj.software[0]);
+
+  const objectToString=JSON.stringify(personObj)
+  console.log(objectToString)
+
+  const stringToObject=JSON.parse(objectToString)
+  console.log(stringToObject.name)
+
+  //Object Variable
+  personObj.language="english"
+  console.log(personObj.language);
+
+  console.log(personObj.fullName());
+
+};
+
+objectTutorials();
+
+// event
+// listener
 // dom
+// LocalStorage
+// KDV hesaplaması
 // jquery ajax GET/POST
