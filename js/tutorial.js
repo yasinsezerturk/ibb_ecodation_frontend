@@ -713,16 +713,13 @@ const ikinci = (callbackFunction) => {
 // ikinci(birinci)
 ////////////////////////////////////////////////////////
 
-
 //promise
 const promTutorials = () => {
   //catch 1 tane olmak zorunda
   let data = new Promise((resolve, reject) => {
     let status = 400;
-    if (status === 200) 
-    resolve("olumlu");
-    else 
-    reject("çalışmadı");
+    if (status === 200) resolve("olumlu");
+    else reject("çalışmadı");
   })
     .then(() => {
       console.log("olumlu");
@@ -737,54 +734,71 @@ const promTutorials = () => {
 
 //asyn/await
 
-
 ////////////////////////////////////////////////////////
 // FIFO VE LIFO NEDİR?
 //dizi, Iterative for, for in, for of, forEach, map, filter, fill
-let arr=()=>{
-  const numbers=[3,5,6,1,9,4,66]
-  return numbers
-}
+let arr = () => {
+  const numbers = [3, 5, 6, 1, 9, 4, 66];
+  return numbers;
+};
 
-let arrResult=()=>{
-  const data=arr()
+let arrResult = () => {
+  const data = arr();
   console.log(data);
   console.log(data[0]);
-  console.log(data[data.length-1]);
+  console.log(data[data.length - 1]);
   //Iterative For Loop
-  for(let i=0;i<data.length;i++)
-  document.write(data[i]+" ")
+  // for(let i=0;i<data.length;i++)
+  // document.write(data[i]+" ")
 
-  document.write("<br/>")
+  // document.write("<br/>")
 
   //for in
-  for(let temp in data)
-  document.write(temp+"=>"+data[temp]+"<br/>")
+  // for(let temp in data)
+  // document.write(temp+"=>"+data[temp]+"<br/>")
 
-document.write("<br/>")
+  // document.write("<br/>")
 
   //for of
-  for(let temp of data)
-  document.write(temp+" ")
+  // for(let temp of data)
+  // document.write(temp+" ")
 
-  document.write("<br/>")
+  // document.write("<br/>")
 
   //forEach
   // forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
-  data.forEach((value,index,array)=>{
-    // document.write(index+"=>"+value+"<br/>");
-    document.write(`${index} => ${value} <br/>`);
-  })
+  // data.forEach((value,index,array)=>{
+  //   // document.write(index+"=>"+value+"<br/>");
+  //   document.write(`${index} => ${value} <br/>`);
+  // })
 
-  //filter
-
+  // filter
+  // filter<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): S[];
+  let result1 = data
+    .filter((value, index, array) => {
+      return value % 2 == 0;
+    })
+    .forEach((value, index, array) => {
+      //document.write(index+" => "+value+"<br/>");
+      document.write(`${index} => ${value} <br/>`);
+    });
+    document.write("<br/>")
   //map
+  // map<U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any): U[];
 
-  //fill
+  data
+    .map((value, index, array) => {
+      return (value += 10);
+    })
+    .forEach((value, index, array) => {
+      //document.write(index+" => "+value+"<br/>");
+      document.write(`${index} => ${value} <br/>`);
+    });
+    document.write("<br/>")
+  
+};
 
-}
-
-arrResult()
+arrResult();
 
 //obje
 //dom
