@@ -628,19 +628,6 @@ let usernameAndSurnameMasking = () => {
 // usernameAndSurnameMasking();
 
 ////////////////////////////////////////////////////////
-
-//return break continue?
-//software prensible
-//Monad
-//setTimeOut
-//callbackFunction
-//promise
-//asyn/await
-//dizi
-//obje
-//dom
-//jquery ajax GET/POST
-
 ////////////////////////////////////////////////////////
 
 // ÖDEV TEKRARI
@@ -673,10 +660,43 @@ let surnameAndLastname = () => {
 
   console.log(surname.concat(" ",lastname))
 };
-surnameAndLastname();
+// surnameAndLastname();
 
 // ilk karakter göstersin sonraki kelimeleri masking (maskeleme yapsın)
 // eğer kullanıcı isim ve soyisimi ilk karakteri küçük girmişse büyük olsun mutlaka
 // Hamit Mızrak
 // H**** MIZ***
 // ipucu: charAt, substring, indexOf, döngü, karar mekanizma
+
+////////////////////////////////////////////////////////
+
+
+//software prensible
+//KISS, YAGNI, SOLID, CLEAN CODE, SPAGETTI CODE, DUMMY CODE NEDİR?
+////////////////////////////////////////////////////////
+
+//Monad
+const birinci=()=>{
+  let user=Number(prompt("Lütfen sayı giriniz"))
+  return user;
+}
+
+const ikinci=()=>{
+  let data=birinci()
+  console.log(Math.sqrt(data));
+}
+ikinci()
+
+
+//setTimeOut
+
+
+//callbackFunction
+//promise
+//asyn/await
+//dizi
+//obje
+//dom
+//jquery ajax GET/POST
+
+
