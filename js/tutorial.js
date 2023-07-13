@@ -670,6 +670,7 @@ let surnameAndLastname = () => {
 
 //software prensible
 //KISS, YAGNI, SOLID, CLEAN CODE, SPAGETTI CODE, DUMMY CODE NEDİR?
+// SENKRON VE ASENKRON NEDİR?
 ////////////////////////////////////////////////////////
 
 //Monad
@@ -710,6 +711,8 @@ const ikinci = (callbackFunction) => {
 };
 
 // ikinci(birinci)
+////////////////////////////////////////////////////////
+
 
 //promise
 const promTutorials = () => {
@@ -728,10 +731,61 @@ const promTutorials = () => {
       console.error(err);
     });
 };
-promTutorials();
+// promTutorials();
+
+////////////////////////////////////////////////////////
 
 //asyn/await
-//dizi
+
+
+////////////////////////////////////////////////////////
+// FIFO VE LIFO NEDİR?
+//dizi, Iterative for, for in, for of, forEach, map, filter, fill
+let arr=()=>{
+  const numbers=[3,5,6,1,9,4,66]
+  return numbers
+}
+
+let arrResult=()=>{
+  const data=arr()
+  console.log(data);
+  console.log(data[0]);
+  console.log(data[data.length-1]);
+  //Iterative For Loop
+  for(let i=0;i<data.length;i++)
+  document.write(data[i]+" ")
+
+  document.write("<br/>")
+
+  //for in
+  for(let temp in data)
+  document.write(temp+"=>"+data[temp]+"<br/>")
+
+document.write("<br/>")
+
+  //for of
+  for(let temp of data)
+  document.write(temp+" ")
+
+  document.write("<br/>")
+
+  //forEach
+  // forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
+  data.forEach((value,index,array)=>{
+    // document.write(index+"=>"+value+"<br/>");
+    document.write(`${index} => ${value} <br/>`);
+  })
+
+  //filter
+
+  //map
+
+  //fill
+
+}
+
+arrResult()
+
 //obje
 //dom
 //jquery ajax GET/POST
