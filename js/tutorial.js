@@ -685,13 +685,25 @@ const ikinci=()=>{
   let data=birinci()
   console.log(Math.sqrt(data));
 }
-ikinci()
+// ikinci()
 
+////////////////////////////////////////////////////////
 
-//setTimeOut
+//setTimeOut(), setInterval()
 
+//belirli zaman sonra tek bir kere çalışır ve durur
+setTimeout(() => {
+  console.log("setTimeOut çalıştı");
+}, 2000)
+
+//belirli bir zmaan sonra çalışır ve sonsuza kadar kapanıp tekrar çalışır
+setInterval(() => {
+  console.log("setInterval çalıştı");
+}, 3000)
+////////////////////////////////////////////////////////
 
 //callbackFunction
+
 //promise
 //asyn/await
 //dizi
