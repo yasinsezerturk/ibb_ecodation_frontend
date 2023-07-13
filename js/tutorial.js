@@ -981,6 +981,9 @@ let objectConstructor = () => {
 //call,apply,bind
 //anonymous function ile arrow function arasındaki fark nedir?
 
+
+//Parametresiz
+
 let noParameterCallApplyBind=function(){
 
   //function
@@ -1002,6 +1005,7 @@ noParameterCallApplyBind()
 
 document.writeln(`<br/>`)
 
+//Parametreli
 
 let parameterCallApplyBind=function(){
 
@@ -1023,13 +1027,11 @@ let parameterCallApplyBind=function(){
 parameterCallApplyBind()
 
 
-
-
 ////////////////////////////////////////////////////////
 
 // event
 // listener
 // dom
-// LocalStorage
+// LocalStorage (Bireysel)
 // KDV hesaplaması
 // jquery ajax GET/POST
