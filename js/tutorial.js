@@ -930,9 +930,9 @@ let objectTutorials = () => {
     number: 31,
     isLogin: true,
     software: ["Html5", "css3", "js"],
-    fullName:function(){
-      return this.name+" "+this.surname
-    }
+    fullName: function () {
+      return this.name + " " + this.surname;
+    },
   };
   console.log(personObj);
   //variable
@@ -945,23 +945,64 @@ let objectTutorials = () => {
   //Array
   console.log(personObj.software[0]);
 
-  const objectToString=JSON.stringify(personObj)
-  console.log(objectToString)
+  const objectToString = JSON.stringify(personObj);
+  console.log(objectToString);
 
-  const stringToObject=JSON.parse(objectToString)
-  console.log(stringToObject.name)
+  const stringToObject = JSON.parse(objectToString);
+  console.log(stringToObject.name);
 
   //Object Variable
-  personObj.language="english"
+  personObj.language = "english";
   console.log(personObj.language);
-
 
   //function callback
   console.log(personObj.fullName());
-
 };
 
-objectTutorials();
+// objectTutorials();
+
+////////////////////////////////////////////////////////
+//object constructor
+let objectConstructor = () => {
+  let personConstructor = function (name, surname) {
+    this.name=name;
+    this.surname=surname;
+    console.log(this);
+  };
+
+  let personResult= new personConstructor("Yasin","Türk")
+  console.log(personResult.name);
+};
+
+// objectConstructor();
+
+////////////////////////////////////////////////////////
+
+//call,apply,bind
+
+let noParameterCallApplyBind=()=>{
+
+  //function
+  let functionOtherObject=()=>{
+    document.writeln(`Parametresiz Function: ${this.adi}<br/>`)
+  }
+
+  //object
+  let objectData={
+    "adi":"Spora Gidiyorum"
+  };
+
+  functionOtherObject.call(objectData)
+  functionOtherObject.apply(objectData)
+  let deneme=functionOtherObject.bind(objectData)
+  deneme()
+}
+noParameterCallApplyBind()
+
+
+
+
+////////////////////////////////////////////////////////
 
 // event
 // listener
