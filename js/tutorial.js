@@ -150,10 +150,8 @@ multiple Comment
 // bize döndürür. Eğer string bir ifadeye gelirse fonksiyon orada durur. örnek x=10a parseInt ise 10 değerini verir, ama a10 ifadesi Nan değerini döndürür
 // çünkü a string bir ifade ile başlamaktadır.
 
-
 //String() data.toString() arasındaki fark nedir?
 // string ve toString arasındaki fark, string her türlü ifadeyi dönüştürebilir ama toString null ve undefine değerleri dönüştüremez
-
 
 //Cast
 // console.log('10'+10);
@@ -637,28 +635,28 @@ let usernameAndSurnameMasking = () => {
 let surnameAndLastname = () => {
   let surnameLastname = prompt("Lütfen adınızı ve soyadınızı giriniz!!!");
 
-  let nameIndex = surnameLastname.indexOf(" ")
+  let nameIndex = surnameLastname.indexOf(" ");
 
   //isim ayırma
   let surname = surnameLastname.substring(0, nameIndex);
-  
+
   for (let i = 1; i < surname.length; i++) {
-    surname = surname.replace(surname.charAt(i), "*").toUpperCase()
-    
+    surname = surname.replace(surname.charAt(i), "*").toUpperCase();
   }
   // console.log(surname);
 
   //soyisim ayırma
-  let lastname = surnameLastname.substring(nameIndex + 1,surnameLastname.length);
-  
+  let lastname = surnameLastname.substring(
+    nameIndex + 1,
+    surnameLastname.length
+  );
 
   for (let i = 3; i < lastname.length; i++) {
-    lastname=lastname.replace(lastname.charAt(i),"*").toUpperCase()
-    
+    lastname = lastname.replace(lastname.charAt(i), "*").toUpperCase();
   }
   // console.log(lastname);
 
-  console.log(surname.concat(" ",lastname))
+  console.log(surname.concat(" ", lastname));
 };
 // surnameAndLastname();
 
@@ -670,21 +668,20 @@ let surnameAndLastname = () => {
 
 ////////////////////////////////////////////////////////
 
-
 //software prensible
 //KISS, YAGNI, SOLID, CLEAN CODE, SPAGETTI CODE, DUMMY CODE NEDİR?
 ////////////////////////////////////////////////////////
 
 //Monad
-const birinci=()=>{
-  let user=Number(prompt("Lütfen sayı giriniz"))
-  return user;
-}
+// const birinci=()=>{
+//   let user=Number(prompt("Lütfen sayı giriniz"))
+//   return user;
+// }
 
-const ikinci=()=>{
-  let data=birinci()
-  console.log(Math.sqrt(data));
-}
+// const ikinci=()=>{
+//   let data=birinci()
+//   console.log(Math.sqrt(data));
+// }
 // ikinci()
 
 ////////////////////////////////////////////////////////
@@ -692,23 +689,49 @@ const ikinci=()=>{
 //setTimeOut(), setInterval()
 
 //belirli zaman sonra tek bir kere çalışır ve durur
-setTimeout(() => {
-  console.log("setTimeOut çalıştı");
-}, 2000)
+// setTimeout(() => {
+//   console.log("setTimeOut çalıştı");
+// }, 2000)
 
 //belirli bir zmaan sonra çalışır ve sonsuza kadar kapanıp tekrar çalışır
-setInterval(() => {
-  console.log("setInterval çalıştı");
-}, 3000)
+// setInterval(() => {
+//   console.log("setInterval çalıştı");
+// }, 3000)
 ////////////////////////////////////////////////////////
 
 //callbackFunction
+const birinci = (data) => {
+  return Math.pow(data, 2);
+};
+const ikinci = (callbackFunction) => {
+  let user = Number(prompt("Lütfen sayı giriniz"));
+  let data = callbackFunction(user);
+  console.log(data);
+};
+
+// ikinci(birinci)
 
 //promise
+const promTutorials = () => {
+  //catch 1 tane olmak zorunda
+  let data = new Promise((resolve, reject) => {
+    let status = 400;
+    if (status === 200) 
+    resolve("olumlu");
+    else 
+    reject("çalışmadı");
+  })
+    .then(() => {
+      console.log("olumlu");
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
+promTutorials();
+
 //asyn/await
 //dizi
 //obje
 //dom
 //jquery ajax GET/POST
-
-
