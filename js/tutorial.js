@@ -955,6 +955,8 @@ let objectTutorials = () => {
   personObj.language="english"
   console.log(personObj.language);
 
+
+  //function callback
   console.log(personObj.fullName());
 
 };
