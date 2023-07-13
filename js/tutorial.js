@@ -979,11 +979,12 @@ let objectConstructor = () => {
 ////////////////////////////////////////////////////////
 
 //call,apply,bind
+//anonymous function ile arrow function arasındaki fark nedir?
 
-let noParameterCallApplyBind=()=>{
+let noParameterCallApplyBind=function(){
 
   //function
-  let functionOtherObject=()=>{
+  let functionOtherObject=function(){
     document.writeln(`Parametresiz Function: ${this.adi}<br/>`)
   }
 
@@ -998,6 +999,28 @@ let noParameterCallApplyBind=()=>{
   deneme()
 }
 noParameterCallApplyBind()
+
+document.writeln(`<br/>`)
+
+
+let parameterCallApplyBind=function(){
+
+  //function
+  let functionOtherObject=function(surname){
+    document.writeln(`Parametresiz Function: ${this.adi} =>${surname} <br/>`)
+  }
+
+  //object
+  let objectData={
+    "adi":"Spora Gidiyorum"
+  };
+
+  functionOtherObject.call(objectData,"Türk")
+  functionOtherObject.apply(objectData,["Türk"])
+  let deneme=functionOtherObject.bind(objectData,"Türk")
+  deneme()
+}
+parameterCallApplyBind()
 
 
 
