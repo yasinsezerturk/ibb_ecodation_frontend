@@ -1130,6 +1130,7 @@ $( "#clickme" ).on( "click", function() {
 
 
 ////////////////////////////////////////////////////////
+// VKI
 // KDV hesaplaması: JS
 // jquery ajax GET/POST
 //Login Validation
