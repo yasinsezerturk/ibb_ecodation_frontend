@@ -602,27 +602,27 @@ const mathFunction = () => {
 // H**** MIZ***
 // ipucu: charAt, substring, indexOf, döngü, karar mekanizma
 
-let usernameAndSurnameMasking = () => {
-  const usernameAndSurname = prompt("Lütfen adınızı ve soyadınızı giriniz");
+// let usernameAndSurnameMasking = () => {
+//   const usernameAndSurname = prompt("Lütfen adınızı ve soyadınızı giriniz");
 
-  const userIndex = usernameAndSurname.indexOf(" ");
-  let username = usernameAndSurname.substring(0, userIndex);
-  for (let i = 1; i < username.length; i++) {
-    username = username.replace(username.charAt(i), "*");
-  }
-  username = username.toUpperCase();
-  console.log(username.toUpperCase());
+//   const userIndex = usernameAndSurname.indexOf(" ");
+//   let username = usernameAndSurname.substring(0, userIndex);
+//   for (let i = 1; i < username.length; i++) {
+//     username = username.replace(username.charAt(i), "*");
+//   }
+//   username = username.toUpperCase();
+//   console.log(username.toUpperCase());
 
-  let surname = usernameAndSurname
-    .substring(userIndex + 1, usernameAndSurname.length)
-    .toUpperCase();
-  console.log(surname);
-  for (let i = 3; i < surname.length; i++) {
-    surname = surname.replace(surname.charAt(i), "*");
-  }
-  console.log(surname);
-  console.log(username.concat(" ").concat(surname));
-};
+//   let surname = usernameAndSurname
+//     .substring(userIndex + 1, usernameAndSurname.length)
+//     .toUpperCase();
+//   console.log(surname);
+//   for (let i = 3; i < surname.length; i++) {
+//     surname = surname.replace(surname.charAt(i), "*");
+//   }
+//   console.log(surname);
+//   console.log(username.concat(" ").concat(surname));
+// };
 // usernameAndSurnameMasking();
 
 ////////////////////////////////////////////////////////
@@ -1001,7 +1001,7 @@ let noParameterCallApplyBind=function(){
   let deneme=functionOtherObject.bind(objectData)
   deneme()
 }
-noParameterCallApplyBind()
+// noParameterCallApplyBind()
 
 document.writeln(`<br/>`)
 
@@ -1024,14 +1024,59 @@ let parameterCallApplyBind=function(){
   let deneme=functionOtherObject.bind(objectData,"Türk")
   deneme()
 }
-parameterCallApplyBind()
+// parameterCallApplyBind()
 
 
 ////////////////////////////////////////////////////////
 
 // event
+
+let eventFunction = () => {
+  alert("deneme")
+}
+
+////////////////////////////////////////////////////////
+// dom
+let newDataDate = () => {
+  // Override: Ezmek
+  // alert("dom");
+  let now = document.getElementById("text_data");
+  // HTML
+  // now.innerHTML ="<b><i><mark>"+ new Date().getFullYear(); +"</mark></i></b>";
+  // now.innerHTML = `<b><i><mark> ${new Date().getFullYear()} </mark></i></b>`;
+
+  // TEXT
+  // now.innerText = `<b><i><mark> ${new Date().getFullYear()} </mark></i></b>`;
+  now.innerText = `${new Date().getFullYear()}`;
+
+
+
+  //CSS
+  now.style.color="yellow"
+  now.style.backgroundColor="black"
+  now.style.padding="5rem"
+}
+
+
+let domData2=()=>{
+  // alert("ÇALIŞTI")
+  // let domUserData=document.getElementById("dom_id").innerText="ID"
+
+  // let domUserData=document.getElementsByClassName("dom_class")[0].innerText="CLASS"
+
+  //Tag Name
+  //  let domUserData=document.getElementsByTagName("p")[1].innerText="TAG NAME"
+
+
+}
+
+// paragrag_id2 adından bir paragraf olsun bu paragrafa kullanıcı mouse ile tıkladığında
+// aşağıda <span id="special_id"></span> içine tıklandı veya paragraf üstüne gelindi.
+
+////////////////////////////////////////////////////////
 // listener
 // dom
 // LocalStorage (Bireysel)
 // KDV hesaplaması
 // jquery ajax GET/POST
+
