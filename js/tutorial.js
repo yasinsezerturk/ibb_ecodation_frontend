@@ -965,12 +965,12 @@ let objectTutorials = () => {
 //object constructor
 let objectConstructor = () => {
   let personConstructor = function (name, surname) {
-    this.name=name;
-    this.surname=surname;
+    this.name = name;
+    this.surname = surname;
     console.log(this);
   };
 
-  let personResult= new personConstructor("Yasin","Türk")
+  let personResult = new personConstructor("Yasin", "Türk");
   console.log(personResult.name);
 };
 
@@ -981,59 +981,55 @@ let objectConstructor = () => {
 //call,apply,bind
 //anonymous function ile arrow function arasındaki fark nedir?
 
-
 //Parametresiz
 
-let noParameterCallApplyBind=function(){
-
+let noParameterCallApplyBind = function () {
   //function
-  let functionOtherObject=function(){
-    document.writeln(`Parametresiz Function: ${this.adi}<br/>`)
-  }
-
-  //object
-  let objectData={
-    "adi":"Spora Gidiyorum"
+  let functionOtherObject = function () {
+    document.writeln(`Parametresiz Function: ${this.adi}<br/>`);
   };
 
-  functionOtherObject.call(objectData)
-  functionOtherObject.apply(objectData)
-  let deneme=functionOtherObject.bind(objectData)
-  deneme()
-}
+  //object
+  let objectData = {
+    adi: "Spora Gidiyorum",
+  };
+
+  functionOtherObject.call(objectData);
+  functionOtherObject.apply(objectData);
+  let deneme = functionOtherObject.bind(objectData);
+  deneme();
+};
 // noParameterCallApplyBind()
 
-document.writeln(`<br/>`)
+document.writeln(`<br/>`);
 
 //Parametreli
 
-let parameterCallApplyBind=function(){
-
+let parameterCallApplyBind = function () {
   //function
-  let functionOtherObject=function(surname){
-    document.writeln(`Parametresiz Function: ${this.adi} =>${surname} <br/>`)
-  }
-
-  //object
-  let objectData={
-    "adi":"Spora Gidiyorum"
+  let functionOtherObject = function (surname) {
+    document.writeln(`Parametresiz Function: ${this.adi} =>${surname} <br/>`);
   };
 
-  functionOtherObject.call(objectData,"Türk")
-  functionOtherObject.apply(objectData,["Türk"])
-  let deneme=functionOtherObject.bind(objectData,"Türk")
-  deneme()
-}
-// parameterCallApplyBind()
+  //object
+  let objectData = {
+    adi: "Spora Gidiyorum",
+  };
 
+  functionOtherObject.call(objectData, "Türk");
+  functionOtherObject.apply(objectData, ["Türk"]);
+  let deneme = functionOtherObject.bind(objectData, "Türk");
+  deneme();
+};
+// parameterCallApplyBind()
 
 ////////////////////////////////////////////////////////
 
 // event
 
 let eventFunction = () => {
-  alert("deneme")
-}
+  alert("deneme");
+};
 
 ////////////////////////////////////////////////////////
 // dom
@@ -1049,34 +1045,92 @@ let newDataDate = () => {
   // now.innerText = `<b><i><mark> ${new Date().getFullYear()} </mark></i></b>`;
   now.innerText = `${new Date().getFullYear()}`;
 
-
-
   //CSS
-  now.style.color="yellow"
-  now.style.backgroundColor="black"
-  now.style.padding="5rem"
-}
+  now.style.color = "yellow";
+  now.style.backgroundColor = "black";
+  now.style.padding = "5rem";
+};
 
-
-let domData2=()=>{
+let domData2 = () => {
   // alert("ÇALIŞTI")
   // let domUserData=document.getElementById("dom_id").innerText="ID"
-
   // let domUserData=document.getElementsByClassName("dom_class")[0].innerText="CLASS"
-
   //Tag Name
   //  let domUserData=document.getElementsByTagName("p")[1].innerText="TAG NAME"
-
-
-}
+};
 
 // paragrag_id2 adından bir paragraf olsun bu paragrafa kullanıcı mouse ile tıkladığında
 // aşağıda <span id="special_id"></span> içine tıklandı veya paragraf üstüne gelindi.
 
 ////////////////////////////////////////////////////////
-// listener
-// dom
-// LocalStorage (Bireysel)
-// KDV hesaplaması
-// jquery ajax GET/POST
 
+// Butona tıkladığımızda kullanıcıya soru sorsun
+// Farklı bir sayfaya gitmek ister misiniz?
+//evet ise farklı bir sayfaya redirect
+//değilse alert versin
+
+let outSite = () => {
+  // alert("deneme")
+  let userInformation = window.confirm(
+    "Farklı bir sayfaya gitmek ister misiniz?"
+  )
+    ? window.location="https://www.ecodation.com"
+    : window.alert("Bu sayfada kalındı");
+};
+
+// outSite();
+
+// listener
+//Ödev: Kullanıcı bu paragrafa kaç kere tıkladı?
+let userListener=()=>{
+  let listenerParag=document.getElementById("parag_list")
+  listenerParag.addEventListener("click",function(e){
+    // alert(e.preventDefault+" "+e.target)
+    // document.getElementById("log_admin").innerHTML="takip edildi"
+    $("#log_admin").html("takip edildi")
+  })
+}
+userListener()
+
+////////////////////////////////////////////////////////
+
+// LocalStorage (Bireysel)
+//veriler ibzim için önemli.
+//verileri saklarız. Database, Browser gibi
+
+
+let localStorageData=()=>{
+  const adi=localStorage.setItem("name","Yasin");
+  const soyadi=localStorage.setItem("surname","Türk");
+  console.log(localStorage);
+
+  const getAdi=localStorage.getItem("name")
+  // alert(getAdi)
+  //RemoveItem
+  localStorage.removeItem("name")
+
+  localStorage.clear()
+}
+
+// localStorageData()
+////////////////////////////////////////////////////////
+// jQueryUI incelenebilir.
+// jQuery
+
+//syntax kısmı önemli
+
+// With the element initially shown, we can hide it slowly:
+$( "#clickme" ).on( "click", function() {
+  $( "#book" ).hide( "slow", function() {
+    alert( "Animation complete." );
+  });
+});
+
+
+
+
+////////////////////////////////////////////////////////
+// KDV hesaplaması: JS
+// jquery ajax GET/POST
+//Login Validation
+//jquery hangi tuşa 
